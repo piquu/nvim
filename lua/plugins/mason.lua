@@ -16,6 +16,7 @@ return {
         'html',
         'cssls',
         'rust_analyzer',
+        'emmet_language_server',
       },
     })
   end,

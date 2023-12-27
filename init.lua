@@ -19,6 +19,12 @@ vim.g.mapleader = ' '
 vim.keymap.set('v', 'J', [[:m '>+1<cr>gv=gv]])
 vim.keymap.set('v', 'K', [[:m '<-2<cr>gv=gv]])
 
+vim.filetype.add({
+  extension = {
+    luau = "luau",
+  },
+})
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({

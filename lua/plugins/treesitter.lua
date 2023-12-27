@@ -15,7 +15,6 @@ return {
         'c',
         'lua',
         'vim',
-        'vimdoc',
         'query',
         'rust',
         'zig',
