@@ -5,10 +5,9 @@ return {
 		lazy = false,
 		opts = {
 			style = 'storm',
-
 		},
 		init = function()
 			require('tokyonight').load()
 		end,
-	},
+	}
 }
