@@ -21,7 +21,6 @@ return {
 				['<c-k>'] = cmp.mapping.select_prev_item(),
 				['<c-j>'] = cmp.mapping.select_next_item(),
 				['<c-c>'] = cmp.mapping.complete(),
-				['<esc>'] = cmp.mapping.abort(),
 				['<c-e>'] = cmp.mapping.confirm({ select = true }),
 			}),
 			sources = cmp.config.sources({
@@ -32,7 +31,7 @@ return {
 			})
 		})
 
-		vim.keymap.set('i', '<tab>', function() luasnip.jump(1) end)
-		vim.keymap.set('i', '<s-tab>', function() luasnip.jump(-1) end)
+		vim.cmd[[snoremap <silent> <tab> <cmd>lua require('luasnip').jump(1)<cr>]]
+		vim.cmd[[snoremap <silent> <s-tab> <cmd>lua require('luasnip').jump(-1)<cr>]]
 	end,
 }

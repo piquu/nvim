@@ -10,8 +10,11 @@ return {
 			ensure_installed = {
 				'lua',
 				'vim',
+				'luau',
 				'rust',
 				'json',
+				'toml',
+				'yaml',
 			},
 			highlight = {
 				enable = true,

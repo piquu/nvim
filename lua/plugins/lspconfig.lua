@@ -3,6 +3,8 @@ return {
 	dependencies = {
 		'williamboman/mason.nvim',
 		'hrsh7th/nvim-cmp',
+
+		'lopi-py/luau-lsp.nvim',
 	},
 	config = function()
 		local lspconfig = require('lspconfig')
@@ -13,6 +15,23 @@ return {
 			function(server_name)
 				lspconfig[server_name].setup({
 					capabilities = cmp_nvim_lsp.capabilities,
+				})
+			end,
+			luau_lsp = function()
+				require('luau-lsp').setup({
+					server = {
+						capabilities = cmp_nvim_lsp.capabilities,
+						settings = {
+							['luau-lsp'] = {
+								completion = {
+									imports = {
+										enabled = true,
+									},
+									addParentheses = false,
+								},
+							},
+						},
+					},
 				})
 			end,
 		})
@@ -26,4 +45,5 @@ return {
 		sign('Hint', 'h')
 		sign('Info', 'i')
 	end,
+	lazy = false,
 }
